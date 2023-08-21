@@ -316,7 +316,7 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'deletes a buffer' })
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'opens lazygit' })
 vim.keymap.set({ 'n', 'x', 'i' }, '<C-s>', '<esc>:Format<CR>:w<CR>', { desc = 'formats and saves' })
-vim.keymap.set('n', '<leader>e', ':NeotreeToggle<CR>', { desc = 'toggles neotree' })
+vim.keymap.set('n', '<leader>e', ':Neotree<CR>', { desc = 'toggles neotree' })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
