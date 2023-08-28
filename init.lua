@@ -216,6 +216,20 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
 
   -- MY CUSTOM PLUGINS
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      -- add any options here
+      toggler = {
+        ---Line-comment toggle keymap
+        line = '<leader>tc',
+        ---Block-comment toggle keymap
+        block = '<leader>tbc',
+      },
+    },
+    lazy = false,
+  },
+
 
   {
     'folke/flash.nvim',
