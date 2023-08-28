@@ -579,6 +579,7 @@ cmp.setup {
 
 -- MY CUSTOM MAPPINGS
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'deletes a buffer' })
+vim.keymap.set('n', '<leader>sr', ':%s//', { desc = 'Start search and replace' })
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'opens lazygit' })
 vim.keymap.set({ 'n', 'x', 'i' }, '<C-s>', '<esc>:w<CR>', { desc = 'formats and saves' })
 vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = 'toggles neotree' })
