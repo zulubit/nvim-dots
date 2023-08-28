@@ -216,6 +216,10 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
 
   -- MY CUSTOM PLUGINS
+
+
+  { 'akinsho/toggleterm.nvim', version = "*", opts = { --[[ things you want to change go here]] } },
+
   {
     'numToStr/Comment.nvim',
     opts = {
@@ -583,3 +587,6 @@ vim.keymap.set('n', '<leader>sr', ':%s//', { desc = 'Start search and replace' }
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'opens lazygit' })
 vim.keymap.set({ 'n', 'x', 'i' }, '<C-s>', '<esc>:w<CR>', { desc = 'formats and saves' })
 vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = 'toggles neotree' })
+vim.keymap.set('n', '<leader>tv', ':ToggleTerm<CR>', { desc = 'toggles vertical terminal' })
+vim.keymap.set('n', '<leader>tt', ':ToggleTerm direction=float<CR>', { desc = 'toggles floating terminal' })
+vim.keymap.set('t', '<C-q>', [[<C-\><C-n>]], { noremap = true, })
