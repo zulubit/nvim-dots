@@ -177,6 +177,7 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
 
   -- MY CUSTOM PLUGINS
+  { 'm4xshen/autoclose.nvim' },
 
   { 'akinsho/toggleterm.nvim', version = "*", config = true },
 
@@ -466,6 +467,10 @@ local servers = {
 
 -- Setup neovim lua configuration
 require('neodev').setup()
+
+-- setup autoclose
+
+require("autoclose").setup()
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
