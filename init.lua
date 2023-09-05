@@ -33,7 +33,7 @@ require('lazy').setup({
   'tpope/vim-rhubarb',
 
   -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
+  --  'tpope/vim-sleuth',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -232,6 +232,8 @@ require('lazy').setup({
 
 -- Set highlight on search
 vim.o.hlsearch = false
+
+vim.o.tabstop = 3
 
 -- Make line numbers default
 vim.wo.number = true
@@ -571,6 +573,9 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- STYLE CHANGES
+
 
 -- MY CUSTOM MAPPINGS
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'deletes a buffer' })
