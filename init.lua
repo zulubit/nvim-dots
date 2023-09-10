@@ -463,6 +463,8 @@ local servers = {
 	-- tsserver = {},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
+
+
 	vim.filetype.add({
 		extension = {
 			astro = "astro",
@@ -600,3 +602,4 @@ vim.keymap.set('n', '<leader>bh', '<C-w>h', { desc = 'Move to window to the left
 vim.keymap.set('n', '<leader>bl', '<C-w>l', { desc = 'Move to window to the right' })
 vim.keymap.set('t', '<C-b>', '<C-\\><C-n><C-w>k', { desc = 'Jump to window above in terminal' })
 vim.keymap.set('n', '<C-b>', '<C-w>j:startinsert<CR>', { desc = 'Jump below and enter insert mode' })
+vim.keymap.set('n', '<leader>cf', ':Format<CR>', { desc = 'formats code' })
