@@ -603,3 +603,4 @@ vim.keymap.set('n', '<leader>bl', '<C-w>l', { desc = 'Move to window to the righ
 vim.keymap.set('t', '<C-b>', '<C-\\><C-n><C-w>k', { desc = 'Jump to window above in terminal' })
 vim.keymap.set('n', '<C-b>', '<C-w>j:startinsert<CR>', { desc = 'Jump below and enter insert mode' })
 vim.keymap.set('n', '<leader>cf', ':Format<CR>', { desc = 'formats code' })
+vim.keymap.set('n', 'xx', ':.,.d<CR>', { desc = 'Delete current line' })
