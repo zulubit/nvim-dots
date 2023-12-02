@@ -97,11 +97,11 @@ require('lazy').setup({
 	},
 
 	{
-		-- Theme inspired by Atom
-		'navarasu/onedark.nvim',
+		"catppuccin/nvim",
+		name = "catppuccin",
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme 'onedark'
+			vim.cmd.colorscheme 'catppuccin-macchiato'
 		end,
 	},
 
@@ -216,6 +216,17 @@ require('lazy').setup({
 
 	{ 'nvim-tree/nvim-web-devicons' }, -- not strictly required, but recommended
 
+	{
+		"roobert/search-replace.nvim",
+		config = function()
+			require("search-replace").setup({
+				-- optionally override defaults
+				default_replace_single_buffer_options = "gcI",
+				default_replace_multi_buffer_options = "egcI",
+			})
+		end,
+	},
+
 
 	{
 		'kdheepak/lazygit.nvim',
@@ -246,7 +257,7 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+--vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -331,7 +342,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
 	-- Add languages to be installed here that you want installed for treesitter
-	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'elixir' },
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
 	auto_install = false,
@@ -486,8 +497,13 @@ local servers = {
 				"SPL", "sqlite3", "standard",
 				"superglobals", "sysvmsg", "sysvsem", "sysvshm", "tidy", "tokenizer", "xml", "xmlreader",
 				"xmlrpc", "xmlwriter",
-				"xsl", "Zend OPcache", "zip", "zlib", "wordpress"
-			}
+				"xsl", "Zend OPcache", "zip", "zlib", "wordpress", "woocommerce",
+				"acf-pro",
+				"wordpress-globals",
+				"wp-cli",
+				"genesis",
+				"polylang" },
+			environment = { includePaths = "/Users/zanfridau/.composer/vendor/php-stubs/" },
 		}
 
 
@@ -588,7 +604,6 @@ cmp.setup {
 
 -- MY CUSTOM MAPPINGS
 vim.keymap.set('n', '<C-x>', ':bd<CR>', { desc = 'deletes a buffer' })
-vim.keymap.set('n', '<leader>sr', ':%s//', { desc = 'Start search and replace' })
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'opens lazygit' })
 vim.keymap.set({ 'n', 'x', 'i' }, '<C-s>', '<esc>:w<CR>', { desc = 'formats and saves' })
 vim.keymap.set('n', '<leader>ee', ':Telescope file_browser<CR><esc>', { desc = 'toggles file explorer' })
@@ -603,3 +618,5 @@ vim.keymap.set('n', '<leader>bl', '<C-w>l', { desc = 'Move to window to the righ
 vim.keymap.set('t', '<C-b>', '<C-\\><C-n><C-w>k', { desc = 'Jump to window above in terminal' })
 vim.keymap.set('n', '<C-b>', '<C-w>j:startinsert<CR>', { desc = 'Jump below and enter insert mode' })
 vim.keymap.set('n', '<leader>cf', ':Format<CR>', { desc = 'formats code' })
+vim.keymap.set('n', "<leader>rs", "<CMD>SearchReplaceSingleBufferSelections<CR>",
+	{ desc = "Search and replace in this buffer" })
