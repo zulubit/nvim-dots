@@ -61,7 +61,6 @@ require('lazy').setup({
 			-- Snippet Engine & its associated nvim-cmp source
 			'L3MON4D3/LuaSnip',
 			'saadparwaiz1/cmp_luasnip',
-
 			-- Adds LSP completion capabilities
 			'hrsh7th/cmp-nvim-lsp',
 
@@ -101,7 +100,7 @@ require('lazy').setup({
 		name = "catppuccin",
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme 'catppuccin-macchiato'
+			vim.cmd.colorscheme 'catppuccin-mocha'
 		end,
 	},
 
@@ -113,7 +112,7 @@ require('lazy').setup({
 		opts = {
 			options = {
 				icons_enabled = false,
-				theme = 'onedark',
+				theme = 'solarized_light',
 				component_separators = '|',
 				section_separators = '',
 			},
@@ -172,6 +171,10 @@ require('lazy').setup({
 
 	-- MY CUSTOM PLUGINS
 	{ 'm4xshen/autoclose.nvim' },
+
+	{
+		'gleam-lang/gleam.vim',
+	},
 
 	{ 'akinsho/toggleterm.nvim', version = "*", config = true },
 
@@ -334,7 +337,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
 	-- Add languages to be installed here that you want installed for treesitter
-	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'elixir' },
+	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'gleam', 'typescript', 'vimdoc', 'vim', 'elixir' },
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
 	auto_install = false,
@@ -582,8 +585,8 @@ cmp.setup {
 		end, { 'i', 's' }),
 	},
 	sources = {
-		{ name = 'copilot', group_index = 2 },
-		{ name = 'nvim_lsp' },
+		{ name = 'copilot',  group_index = 2 },
+		{ name = 'nvim_lsp', group_index = 1 },
 		{ name = 'luasnip' },
 	},
 }
