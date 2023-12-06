@@ -172,6 +172,22 @@ require('lazy').setup({
 	-- MY CUSTOM PLUGINS
 	{ 'm4xshen/autoclose.nvim' },
 
+	{
+		'romgrk/barbar.nvim',
+		dependencies = {
+			'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+			'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+		},
+		init = function() vim.g.barbar_auto_setup = false end,
+		opts = {
+			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+			-- animation = true,
+			-- insert_at_start = true,
+			-- …etc.
+		},
+		version = '^1.0.0', -- optional: only update when a new 1.x version is released
+	},
+
 
 	{ 'akinsho/toggleterm.nvim', version = "*", config = true },
 
@@ -572,10 +588,11 @@ vim.keymap.set('n', '<leader>ec', ':Telescope file_browser path=%:p:h select_buf
 	{ desc = 'toggles file explorer' })
 vim.keymap.set('n', '<leader>tt', ':ToggleTerm<CR>', { desc = 'toggles vertical terminal' })
 vim.keymap.set('t', '<C-q>', [[<C-\><C-n>]], { noremap = true, })
-vim.keymap.set('n', '<leader>bj', '<C-w>k', { desc = 'Move to window above' })
-vim.keymap.set('n', '<leader>bk', '<C-w>j', { desc = 'Move to window below' })
+vim.keymap.set('n', '<leader>bk', '<C-w>k', { desc = 'Move to window above' })
+vim.keymap.set('n', '<leader>bj', '<C-w>j', { desc = 'Move to window below' })
 vim.keymap.set('n', '<leader>bh', '<C-w>h', { desc = 'Move to window to the left' })
 vim.keymap.set('n', '<leader>bl', '<C-w>l', { desc = 'Move to window to the right' })
+vim.keymap.set('n', '<leader>bv', ':vsplit<CR>', { desc = 'New vsplit' })
 vim.keymap.set('t', '<C-b>', '<C-\\><C-n><C-w>k', { desc = 'Jump to window above in terminal' })
 vim.keymap.set('n', '<C-b>', '<C-w>j:startinsert<CR>', { desc = 'Jump below and enter insert mode' })
 vim.keymap.set('n', '<leader>cf', ':Format<CR>', { desc = 'formats code' })
