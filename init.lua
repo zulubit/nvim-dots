@@ -172,9 +172,6 @@ require('lazy').setup({
 	-- MY CUSTOM PLUGINS
 	{ 'm4xshen/autoclose.nvim' },
 
-	{
-		'gleam-lang/gleam.vim',
-	},
 
 	{ 'akinsho/toggleterm.nvim', version = "*", config = true },
 
@@ -309,6 +306,11 @@ require('telescope').setup {
 			},
 		},
 	},
+	extensions = {
+		file_browser = {
+			respect_gitignore = false,
+		},
+	},
 }
 
 -- Enable telescope fzf native, if installed
@@ -337,10 +339,10 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
 	-- Add languages to be installed here that you want installed for treesitter
-	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'gleam', 'typescript', 'vimdoc', 'vim', 'elixir' },
+	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'elixir' },
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-	auto_install = false,
+	auto_install = true,
 
 	highlight = { enable = true },
 	indent = { enable = true },
@@ -469,13 +471,6 @@ local servers = {
 	-- tsserver = {},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
-
-
-	vim.filetype.add({
-		extension = {
-			astro = "astro",
-		},
-	}),
 
 	intelephense = {
 		intelephense = {
