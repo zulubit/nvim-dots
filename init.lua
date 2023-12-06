@@ -339,7 +339,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
 	-- Add languages to be installed here that you want installed for treesitter
-	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'elixir' },
+	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'elixir', 'php' },
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
 	auto_install = true,
@@ -470,35 +470,6 @@ local servers = {
 	-- rust_analyzer = {},
 	-- tsserver = {},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
-
-	intelephense = {
-		intelephense = {
-			stubs = {
-				"apache", "bcmath", "bz2", "calendar", "com_dotnet", "Core", "ctype", "curl", "date",
-				"dba", "dom", "enchant",
-				"exif", "FFI", "fileinfo", "filter", "fpm", "ftp", "gd", "gettext", "gmp", "hash",
-				"iconv", "imap", "intl",
-				"json", "ldap", "libxml", "mbstring", "meta", "mysqli", "oci8", "odbc", "openssl",
-				"pcntl", "pcre", "PDO",
-				"pdo_ibm", "pdo_mysql", "pdo_pgsql", "pdo_sqlite", "pgsql", "Phar", "posix", "pspell",
-				"random", "readline",
-				"Reflection", "session", "shmop", "SimpleXML", "snmp", "soap", "sockets", "sodium",
-				"SPL", "sqlite3", "standard",
-				"superglobals", "sysvmsg", "sysvsem", "sysvshm", "tidy", "tokenizer", "xml", "xmlreader",
-				"xmlrpc", "xmlwriter",
-				"xsl", "Zend OPcache", "zip", "zlib", "wordpress", "woocommerce",
-				"acf-pro",
-				"wordpress-globals",
-				"wp-cli",
-				"genesis",
-				"polylang" },
-			environment = { includePaths = "/Users/zanfridau/.composer/vendor/php-stubs/" },
-		}
-
-
-	},
-
 
 	lua_ls = {
 		Lua = {
