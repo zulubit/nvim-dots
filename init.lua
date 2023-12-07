@@ -170,6 +170,8 @@ require('lazy').setup({
 	-- { import = 'custom.plugins' },
 
 	-- MY CUSTOM PLUGINS
+
+
 	{ 'm4xshen/autoclose.nvim' },
 
 	{
@@ -355,10 +357,10 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
 	-- Add languages to be installed here that you want installed for treesitter
-	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'elixir', 'php' },
+	ensure_installed = { 'go', 'lua', 'tsx', 'typescript', 'php' },
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-	auto_install = true,
+	auto_install = false,
 
 	highlight = { enable = true },
 	indent = { enable = true },
