@@ -190,7 +190,6 @@ require('lazy').setup({
 		version = '^1.0.0', -- optional: only update when a new 1.x version is released
 	},
 
-
 	{ 'akinsho/toggleterm.nvim', version = "*", config = true },
 
 	{
@@ -513,8 +512,6 @@ local servers = {
 				"polylang" },
 			environment = { includePaths = "/Users/zanfridau/.composer/vendor/php-stubs/" },
 		}
-
-
 	},
 
 	lua_ls = {
@@ -628,3 +625,8 @@ vim.keymap.set('n', '<C-b>', '<C-w>j:startinsert<CR>', { desc = 'Jump below and 
 vim.keymap.set('n', '<leader>cf', ':Format<CR>', { desc = 'formats code' })
 vim.keymap.set('n', "<leader>rs", "<CMD>SearchReplaceSingleBufferSelections<CR>",
 	{ desc = "Search and replace in this buffer" })
+vim.keymap.set('n', '<C-h>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<C-l>', '<Cmd>BufferNext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<leader>bo', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>',
+	{ desc = 'Close all non pinned or opened buffers' })
+vim.keymap.set('n', '<leader>bp', '<Cmd>BufferPin<CR>', { desc = 'Pin a buffer' })
