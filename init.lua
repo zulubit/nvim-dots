@@ -479,7 +479,7 @@ end
 --  define the property 'filetypes' to the map in question.
 
 
-
+local project_path = vim.fn.getcwd()
 local servers = {
 	-- clangd = {},
 	-- gopls = {},
@@ -509,9 +509,13 @@ local servers = {
 				"wordpress-globals",
 				"wp-cli",
 				"genesis",
-				"polylang" },
-			environment = { includePaths = "/Users/zanfridau/.composer/vendor/php-stubs/" },
+				"polylang", "laravel" },
+			environment = { includePaths = { project_path .. "/vendor", "/Users/zanfridau/.composer/vendor/php-stubs/" } },
 		}
+	},
+
+	volar = {
+		filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
 	},
 
 	lua_ls = {
