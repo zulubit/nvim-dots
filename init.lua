@@ -477,7 +477,7 @@ end
 --
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
-
+vim.filetype.add({ extension = { templ = "templ" } })
 
 local project_path = vim.fn.getcwd()
 local servers = {
@@ -487,6 +487,7 @@ local servers = {
 	-- rust_analyzer = {},
 	-- tsserver = {},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
+	templ = { filetypes = { 'templ' } },
 
 
 	intelephense = {
