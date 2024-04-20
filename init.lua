@@ -674,7 +674,7 @@ require('lazy').setup({
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<C-enter>'] = cmp.mapping.confirm { select = true },
 
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
@@ -926,3 +926,4 @@ vim.keymap.set('n', '<C-h>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous buffe
 vim.keymap.set('n', '<C-l>', '<Cmd>BufferNext<CR>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>rs', '<CMD>SearchReplaceSingleBufferSelections<CR>', { desc = 'Search and replace in this buffer' })
 vim.keymap.set('n', '<leader>bo', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>', { desc = 'Close all non pinned or opened buffers' })
+vim.keymap.set({ 'n', 'x', 'i' }, '<C-s>', '<esc>:w<CR>', { desc = 'formats and saves' })
