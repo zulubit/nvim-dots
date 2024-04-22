@@ -87,6 +87,7 @@ p.S. You can delete this when you're done too. It's your config now! :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -223,7 +224,7 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  --  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -647,7 +648,7 @@ require('lazy').setup({
               'polylang',
               'laravel',
             },
-   --[[          environment = { includePaths = { project_path .. '/vendor', '/Users/zanfridau/.composer/vendor/php-stubs/' } }, ]]
+            --[[          environment = { includePaths = { project_path .. '/vendor', '/Users/zanfridau/.composer/vendor/php-stubs/' } }, ]]
           },
         },
       }
