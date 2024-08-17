@@ -1,4 +1,4 @@
---[[
+--[[ini
 
 =====================================================================
 ==================== read this before continuing ====================
@@ -967,16 +967,16 @@ require('lazy').setup({
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
 
-  -- {
-  --   'Exafunction/codeium.nvim',
-  --   dependencies = {
-  --     'nvim-lua/plenary.nvim',
-  --     'hrsh7th/nvim-cmp',
-  --   },
-  --   config = function()
-  --     require('codeium').setup {}
-  --   end,
-  -- },
+  {
+    'Exafunction/codeium.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'hrsh7th/nvim-cmp',
+    },
+    config = function()
+      require('codeium').setup {}
+    end,
+  },
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
