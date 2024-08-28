@@ -355,6 +355,11 @@ require('lazy').setup({
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
           },
+          file_browser = {
+            hidden = { file_browser = true, folder_browser = true },
+            no_ignore = true,
+            git_status = true,
+          },
         },
       }
 
