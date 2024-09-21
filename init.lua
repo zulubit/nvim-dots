@@ -83,7 +83,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- NOTE: CUSTTOM COMMANDS
 vim.keymap.set({ 'n', 'x', 'i' }, '<C-s>', '<esc>:w<CR>', { desc = 'formats and saves' })
-vim.keymap.set('n', '<leader>b', '<Cmd>bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<leader>bb', '<Cmd>bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<leader>bd', '<Cmd>bd<CR>', { desc = '[b]uffer [d]elete' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -856,7 +857,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
@@ -892,3 +893,6 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+vim.opt.tabstop = 4 -- Number of spaces tabs count for
+vim.opt.softtabstop = 4 -- Number of spaces inserted for a tab
+vim.opt.shiftwidth = 4 -- Number of spaces for autoindent

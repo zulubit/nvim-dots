@@ -38,7 +38,7 @@ return {
         default_replace_single_buffer_options = 'gci',
         default_replace_multi_buffer_options = 'egci',
       }
+      vim.keymap.set('n', '<leader>rs', '<cmd>SearchReplaceSingleBufferOpen<cr>', { desc = 'search and replace in this buffer' })
     end,
-    vim.keymap.set('n', '<leader>rs', '<cmd>searchreplacesinglebufferselections<cr>', { desc = 'search and replace in this buffer' }),
   },
 }
