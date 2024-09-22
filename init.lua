@@ -739,6 +739,9 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          {
+            name = 'codeium', -- Add Codeium as a source
+          },
         },
       }
     end,

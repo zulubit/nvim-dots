@@ -3,7 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-
   {
     'folke/flash.nvim',
     event = 'VeryLazy',
@@ -23,22 +22,36 @@ return {
 
   {
     'kdheepak/lazygit.nvim',
-    -- optional for floating window border decoration
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
-    vim.keymap.set('n', '<leader>g', ':LazyGit<CR>', { desc = 'opens lazygit' }),
+    config = function()
+      vim.keymap.set('n', '<leader>g', ':LazyGit<CR>', { desc = 'opens lazygit' })
+    end,
   },
 
   {
     'roobert/search-replace.nvim',
     config = function()
       require('search-replace').setup {
-        -- optionally override defaults
-        default_replace_single_buffer_options = 'gci',
+        -- optionally ovesride defaults
+        default_reslace_single_buffer_options = 'gci',
         default_replace_multi_buffer_options = 'egci',
       }
       vim.keymap.set('n', '<leader>rs', '<cmd>SearchReplaceSingleBufferOpen<cr>', { desc = 'search and replace in this buffer' })
+    end,
+  },
+
+  {
+    'Exafunction/codeium.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'hrsh7th/nvim-cmp',
+    },
+    config = function()
+      require('codeium').setup {
+        enable_chat = true,
+      }
     end,
   },
 }
