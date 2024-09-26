@@ -526,7 +526,30 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         gopls = {},
-        intelephense = {},
+
+        intelephense = {
+          settings = {
+            intelephense = {
+              files = {
+                maxSize = 5000000, -- Increase this if you're working with large files
+              },
+              diagnostics = {
+                enable = true,
+                run = 'onSave', -- You can change this to "onType" for real-time diagnostics
+              },
+              php = {
+                version = '8.0', -- Set this to the PHP version you're using
+                stubs = {
+                  'wordpress', -- Include WordPress stubs for better support
+                  'woocommerce', -- Include WooCommerce stubs
+                  'acf-pro', -- Include ACF Pro stubs
+                  'elementor', -- Include Elementor stubs
+                },
+              },
+            },
+          },
+        },
+
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
