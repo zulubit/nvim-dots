@@ -693,6 +693,12 @@ require('lazy').setup({
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
 
+      luasnip.add_snippets('all', {
+        luasnip.snippet('ien', {
+          luasnip.text_node 'if err != nil { return err }',
+        }),
+      })
+
       cmp.setup {
         snippet = {
           expand = function(args)
