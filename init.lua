@@ -416,6 +416,9 @@ require('lazy').setup({
       --    That is to say, every time a new file is opened that is associated with
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
       --    function will be executed to configure the current buffer
+
+      require('lspconfig').gleam.setup {}
+
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -862,6 +865,7 @@ require('lazy').setup({
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
+
       highlight = {
         enable = true,
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
@@ -928,3 +932,12 @@ require('lazy').setup({
 vim.opt.tabstop = 4 -- Number of spaces tabs count for
 vim.opt.softtabstop = 4 -- Number of spaces inserted for a tab
 vim.opt.shiftwidth = 4 -- Number of spaces for autoindent
+
+-- Force .blade.php files to be recognized as PHP
+vim.api.nvim_create_autocmd('BufWinEnter', {
+  pattern = '*.blade.php',
+  callback = function()
+    vim.bo.filetype = 'php'
+  end,
+  desc = 'Set blade.php files as PHP',
+})
